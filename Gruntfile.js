@@ -3,7 +3,6 @@ module.exports = function(grunt)
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-linter');	
 	grunt.loadNpmTasks('grunt-dot-compiler');
-	grunt.loadNpmTasks('grunt-json');
 	grunt.loadNpmTasks('grunt-pngmin');
 	grunt.loadNpmTasks('grunt-glue-nu');
 	grunt.loadNpmTasks('grunt-rename');
@@ -74,7 +73,7 @@ module.exports = function(grunt)
 		},
 
 		// this moves and renames the sprites.css folder to the sprites.scss 
-		// so it can be compiled with the othe SCSS
+		// so it can be compiled with the other SCSS
 		rename: 
 		{
 	        renameSpriteToScss: 
@@ -122,7 +121,6 @@ module.exports = function(grunt)
 
 			exclude:
 			[
-				'Content/js/project/json/json-compiled.js',
 				'Content/js/project/templates/templates-compiled.js'
 			]
 		},
@@ -135,24 +133,6 @@ module.exports = function(grunt)
 			}
 		},
 
-		// ------------ JSON compiler
-		json: 
-		{
-			main: 
-			{
-		        options: 
-		        {
-		            namespace: 'oJson',
-		            includePath: false,
-		            processName: function(filename) 
-		            {
-		                return filename.toLowerCase();
-		            }
-		        },
-		        src: ['Content/json/**/*.json'],
-		        dest: 'Content/js/project/json/json-compiled.js'
-		    }
-		},
 
 		// ------------ DOT compiler
 		dot: 

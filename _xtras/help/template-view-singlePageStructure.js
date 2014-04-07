@@ -1,23 +1,19 @@
 define([
-    "common/view",
-    "forms/form_login"  
+    "common/view"  
 ], 
 
-function (view, formLogin)
+function (view)
 {
 
     // ---------------------------------------------------------------
     //
-    // PAGE INDEX
+    // PAGE
     //
     // ---------------------------------------------------------------
 
     var constructor = function ()
     {
         this.oView = view;
-
-        this.oForm = formLogin;
-        
         this.init();
     };
 
@@ -31,9 +27,10 @@ function (view, formLogin)
         //                                                           init
         init: function()
         {           
-            console.log(" * <index>");
+            console.log(" * <page>");
             this.preloadImages();
             this.assignListeners();
+            this.onPageLoad();
         },
 
         // ______________________________________________________________
@@ -49,12 +46,7 @@ function (view, formLogin)
         //                                                assignListeners
         assignListeners: function()
         {          
-            var self = this;
-
-            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_INDEX, function(evt)
-            {
-                self.onPageLoad();   
-            });            
+            var self = this;        
         },
 
         // ______________________________________________________________

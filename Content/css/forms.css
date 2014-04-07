@@ -1,11 +1,9 @@
 /*
 Syntax error: Undefined variable: "$globalImagePath".
         on line 8 of C:/inetpub/template/Content/scss/forms.scss
-        from line 17 of C:/inetpub/template/Content/scss/project.scss
 
 Backtrace:
 C:/inetpub/template/Content/scss/forms.scss:8
-C:/inetpub/template/Content/scss/project.scss:17
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/node.rb:40:in `perform'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/script/operation.rb:74:in `_perform'
@@ -26,12 +24,6 @@ C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/v
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:106:in `visit_children'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:316:in `visit_rule'
-org/jruby/RubyKernel.java:2096:in `send'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:224:in `visit_import'
-org/jruby/RubyArray.java:2336:in `collect'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:224:in `visit_import'
 org/jruby/RubyKernel.java:2096:in `send'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
 C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:98:in `visit'
@@ -90,4 +82,4 @@ C:\Program Files (x86)\Scout\bin\compass:12:in `(root)'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$globalImagePath\".\A         on line 8 of C:/inetpub/template/Content/scss/forms.scss\A         from line 17 of C:/inetpub/template/Content/scss/project.scss"; }
+  content: "Syntax error: Undefined variable: \"$globalImagePath\".\A         on line 8 of C:/inetpub/template/Content/scss/forms.scss"; }

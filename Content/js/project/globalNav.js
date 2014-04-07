@@ -1,9 +1,8 @@
 define([
-    "common/view",
-    "forms/form_login"  
+    "common/view"  
 ], 
 
-function (view, formLogin)
+function (view)
 {
 
     // ---------------------------------------------------------------
@@ -14,10 +13,9 @@ function (view, formLogin)
 
     var constructor = function ()
     {
+        console.log(" * <globalNav>");
         this.oView = view;
 
-        this.oForm = formLogin;
-        
         this.init();
     };
 
@@ -30,39 +28,33 @@ function (view, formLogin)
         // ______________________________________________________________
         //                                                           init
         init: function()
-        {           
-            console.log(" * <index>");
-            this.preloadImages();
-            this.assignListeners();
+        { 
+            this.assignListeners();            
         },
 
         // ______________________________________________________________
         //                                                  preloadImages
         preloadImages: function()
-        {          
-            // var str = this.oGlobalModel.PATH_RELATIVE + "Content/images/desktop/button-red_hover.png";
-            // window.helpers.preloadImage(str);
+        {
+                 
+            //var str = this.oGlobalModel.PATH_RELATIVE + "Content/images/desktop/button-red_hover.png";
+            //window.helpers.preloadImage(str);
         },
 
 
         // ______________________________________________________________
         //                                                assignListeners
         assignListeners: function()
-        {          
+        {           
             var self = this;
 
-            window.tEvent.addListener(window.tEvent.eventStr.EVENT_LOAD_INDEX, function(evt)
+            /*
+            window.tEvent.addListener("FB_INIT", function(evt, data)
             {
-                self.onPageLoad();   
-            });            
-        },
-
-        // ______________________________________________________________
-        //                                         assignDynamicListeners
-        assignDynamicListeners: function()
-        {          
-            var self = this;
-        },
+                self.oFB = data;
+            });
+            */
+        }
 
         
 
@@ -75,18 +67,15 @@ function (view, formLogin)
         // --------------------------------------------------------------
         // EVENTS
         // --------------------------------------------------------------
-        // ______________________________________________________________
-        //                                                     onPageLoad
-        onPageLoad: function()
-        {   
-            console.log(" * <index.onPageLoad>");
-        }
+
 
     };
 
     var Class = constructor;
     Class.prototype = methods;
-   
-    return (Class);     
+    
+    var instance = new Class();
+    
+    return (Class);        
    
 });
