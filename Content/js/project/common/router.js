@@ -7,13 +7,13 @@
     Use the loadActivePage method to instantiate the active page.
 */
 
-define([
-    "common/model",
+define([ 
     "index"  
 ],
 
-function (model, PageIndex) 
+function (PageIndex) 
 {
+
 
     // ---------------------------------------------------------------
     //
@@ -32,9 +32,6 @@ function (model, PageIndex)
         this.PAGE_STRUCTURE_SINGLE = "single";
         this.PAGE_STRUCTURE_MULTI  = "multi";
         this.PAGE_STRUCTURE_HYBRID = "hybrid";
-
-        // core objects
-        this.oModel = model;                  
 
         this.pageModel = {};
         this.oActivePage = {};
@@ -105,7 +102,7 @@ function (model, PageIndex)
             };
 
             // give model page model ref
-            this.oModel.pageModel = this.pageModel;
+            this.pageModel = this.pageModel;
         },
 
         // ______________________________________________________________
@@ -157,14 +154,14 @@ function (model, PageIndex)
                 // find hash string and call event
                 var result = false;
                 exitIter:
-                for (var sectionKey in self.oModel.pageModel)
+                for (var sectionKey in self.pageModel)
                 {
-                    for (var key in self.oModel.pageModel[sectionKey])
+                    for (var key in self.pageModel[sectionKey])
                     {                        
-                        if (location.hash === "#" + self.oModel.pageModel[sectionKey][key].hashString)
+                        if (location.hash === "#" + self.pageModel[sectionKey][key].hashString)
                         {                           
                             result = true;                        
-                            window.tEvent.fire(self.oModel.pageModel[sectionKey][key].loadEvent);
+                            window.tEvent.fire(self.pageModel[sectionKey][key].loadEvent);
                             break exitIter;
                         }
                     }
