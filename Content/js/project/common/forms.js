@@ -131,12 +131,11 @@
 	}
 */
 define([
-	"common/model",
 	"common/services",  
 	"validate"
 ], 
 
-function (model, services) 
+function (services) 
 {
 	// ---------------------------------------------------------------
 	//
@@ -150,7 +149,6 @@ function (model, services)
 		var self = this;
 
 		// core objects
-		this.oModel = model;  
 		this.oServices = services;
 
 		this.STR_ERROR_FIELDS       = "Please complete the fields highlighted above.";
