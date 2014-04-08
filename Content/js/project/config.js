@@ -44,15 +44,15 @@ require.config(
 		"jquery",
 		"EventTarget",
 		"Templates",
-		"gsCSSPlugin",
-		"gsTweenLite",
-		"spearfishHelpers",
-		"notify",
-		"bootstrap",
-		"hammer",
-
+		//"gsCSSPlugin",
+		//"gsTweenLite",
+		"spearfishHelpers",		
+		//"bootstrap",
+		//"hammer",
+		
+		"common/router",
 		"globalNav",
-		"common/router"
+		"index"
 	]
 
 

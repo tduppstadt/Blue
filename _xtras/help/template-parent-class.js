@@ -36,14 +36,6 @@ function (model)
             this.preloadImages();   
         },
 
-        // ______________________________________________________________
-        //                                                  preloadImages
-        preloadImages: function()
-        {   
-            // var str = this.oGlobalModel.PATH_RELATIVE + "Content/images/desktop/button-red_hover.png";
-            // window.helpers.preloadImage(str);
-        },
-
 
         // ______________________________________________________________
         //                                                assignListeners
