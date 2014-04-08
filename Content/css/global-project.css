@@ -1,4 +1,4 @@
-/* line 38, ../scss/global-project.scss */
+/* line 36, ../scss/global-project.scss */
 html,
 body {
   background-color: white;
@@ -6,16 +6,16 @@ body {
   font-family: sans-serif;
 }
 
-/* line 53, ../scss/global-project.scss */
+/* line 49, ../scss/global-project.scss */
 a:link, a:visited, a:hover, a:active {
   color: blue;
 }
-/* line 58, ../scss/global-project.scss */
+/* line 57, ../scss/global-project.scss */
 a:active {
   margin-top: 1px;
 }
 
-/* line 71, ../scss/global-project.scss */
+/* line 70, ../scss/global-project.scss */
 .button {
   text-align: center;
   background-color: gray;

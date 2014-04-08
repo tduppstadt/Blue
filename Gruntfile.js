@@ -160,9 +160,12 @@ module.exports = function(grunt)
 					baseUrl        : "Content/js/project/",	
 					include        : ['../libs/require-jquery.js'],	
 
-					optimize       : "uglify",
+					optimize       : "uglify2",
 					mainConfigFile : "Content/js/project/config.js",				
-					out            : 'Content/js/release/' + projectName + '.js'
+					out            : 'Content/js/release/' + projectName + '.js',
+
+					preserveLicenseComments : false,
+					generateSourceMaps      : true
 		
 			    }
 			}
