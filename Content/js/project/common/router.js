@@ -1,19 +1,22 @@
 /*
     INSTRUCTIONS:
+
     For Single Page apps:
     Use the pageModel to organize the hash and event strings.
+    NOTE: pre-instantiate your page classes
 
     For Multi Page apps:
     Use the loadActivePage method to instantiate the active page.
+    NOTE: Do not instantiate your page classes, the router will do this as needed 
 */
 
-define([ 
+define([
+    "common/model",
     "index"  
 ],
 
-function (PageIndex) 
+function (model, PageIndex) 
 {
-
 
     // ---------------------------------------------------------------
     //
@@ -32,6 +35,9 @@ function (PageIndex)
         this.PAGE_STRUCTURE_SINGLE = "single";
         this.PAGE_STRUCTURE_MULTI  = "multi";
         this.PAGE_STRUCTURE_HYBRID = "hybrid";
+
+        // core objects
+        this.oModel = model;                  
 
         this.pageModel = {};
         this.oActivePage = {};
@@ -66,11 +72,11 @@ function (PageIndex)
             switch(structure)
             {
                 case this.PAGE_STRUCTURE_SINGLE:
-                    this.loadActivePage();  
+                    this.initHash();                     
                     break;
 
                 case this.PAGE_STRUCTURE_MULTI:
-                    this.initHash(); 
+                    this.loadActivePage();  
                     break;
 
                 case this.PAGE_STRUCTURE_HYBRID:
@@ -102,7 +108,7 @@ function (PageIndex)
             };
 
             // give model page model ref
-            this.pageModel = this.pageModel;
+            this.oModel.pageModel = this.pageModel;
         },
 
         // ______________________________________________________________
@@ -144,6 +150,8 @@ function (PageIndex)
             window.allowHash = true;
             window.onhashchange = function()
             {      
+                window.tEvent.fire(window.tEvent.eventStr.EVENT_NEW_PAGE);
+                
                 // check for allowing updates based on hash                
                 if (!window.allowHash) 
                 {
@@ -154,14 +162,14 @@ function (PageIndex)
                 // find hash string and call event
                 var result = false;
                 exitIter:
-                for (var sectionKey in self.pageModel)
+                for (var sectionKey in self.oModel.pageModel)
                 {
-                    for (var key in self.pageModel[sectionKey])
+                    for (var key in self.oModel.pageModel[sectionKey])
                     {                        
-                        if (location.hash === "#" + self.pageModel[sectionKey][key].hashString)
+                        if (location.hash === "#" + self.oModel.pageModel[sectionKey][key].hashString)
                         {                           
                             result = true;                        
-                            window.tEvent.fire(self.pageModel[sectionKey][key].loadEvent);
+                            window.tEvent.fire(self.oModel.pageModel[sectionKey][key].loadEvent);
                             break exitIter;
                         }
                     }
